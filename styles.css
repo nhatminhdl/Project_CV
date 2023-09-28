@@ -1,0 +1,890 @@
+/*========================================================Base CSS========================================================*/
+
+:root{
+    --text-color: #333;
+    --primary-color: #ec8f00;
+}
+
+.cv .container-fluid{
+    width: 1123px; /*210mm*/
+    width: 210mm;
+    font-size: 13px;
+    /* min-height: 260mm; */
+
+    
+
+    /* width:   210mm;
+    height:  297mm; */
+}
+
+.cv .container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: justify;
+   
+}
+
+.font-23{
+    font-size: 23px;
+}
+
+.font-12{
+    font-size: 12px;
+}
+
+.font-13{
+    font-size: 13px;
+}
+
+.inner-info-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.cv ul li{
+    list-style: none;
+    padding: 0;
+   
+}
+
+.cv p{
+    margin: 0;
+    outline: none;
+}
+
+.cv ul{
+    padding: 0; 
+  
+}
+
+.title-cv {
+    /* margin: 4px; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 9px;
+ }
+
+.title-cv__text{
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 16;
+    text-transform: uppercase;
+}
+ 
+.title-cv__line {
+     flex: 1;
+     background-color: var(--primary-color);
+     height: 1px;
+     width: 100%;
+}
+
+
+/*
+====================
+Custom placeholder
+====================
+*/
+div[placeholder]:empty::before,
+h6[placeholder]:empty::before,
+p[placeholder]:empty::before 
+{
+    content: attr(placeholder);
+    font-style: italic;
+    opacity: 0.5;
+    text-transform: none;
+    font-weight: 400;
+}
+
+/*==================================================================================================*/
+
+.cv{
+    text-align: justify;
+}
+.wrapper{
+    display: flex;
+}
+.wrapper-left{
+    width: 350px;
+    padding: 15px;
+    background-color: rgb(53, 58, 61);
+    color: #fff;
+}
+
+.wrapper-right{
+    padding:15px 25px 25px 25px;
+    width: calc( 1123px - 350px);
+}
+.text_color--primary{
+    color: var(--primary-color);
+}
+
+.info-left__name {
+    font-weight: bold;
+}
+
+
+.person__info-left,
+.info-left__person-info,
+.info-left__skills,
+.info-left__favourite,
+.info-left__presenter,
+.info-left__more-info,
+
+.info-right__target,
+.info-right__experience,
+.info-right__education,
+.info-right__prize,
+.info-right__certificate,
+.info-right__activities
+
+{
+    margin-top: 0;
+    padding: 3px;
+  
+}
+
+
+.ex-content__header,
+.ex-content__company,
+.education__item-header,
+.activities__header
+
+{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+}
+
+/* .content-header__title, */
+.education__item-time,
+.education__item-majors,
+.activities__header
+
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ex-content__company,
+.activities-content__name
+{
+    font-weight: 700;
+}
+
+/*==========================================*/
+.person__info-left,
+.info-left__skills,
+.info-left__name,
+.skill__list,
+
+.btn__insert-line,
+.btn__Delete,
+.btn__insert-line-1,
+.btn__Delete-1,
+.btn__Delete-2,
+
+.info-left__person-info,
+.person-info__list,
+
+.info-left__favourite,
+.favourite__list,
+
+.presenter__list,
+
+.info-left__more-info,
+.more-info__list,
+.target__content,
+
+.experience__content,
+
+.education__content,
+.prize__list,
+.certificate__list,
+.presenter__list,
+.presenter__item,
+.presenter__item-text
+
+{
+    position: relative;
+    z-index: 2;
+}
+
+/*
+=============================
+    Make border hover
+=============================
+*/
+.person__info-left:hover:not(.person__info-left:focus-within)::after,
+.info-left__person-info:hover:not(.info-left__person-info:focus-within)::after,
+.info-left__skills:hover:not(.info-left__skills:focus-within)::after,
+.info-left__favourite:hover:not(.info-left__favourite:focus-within)::after,
+.info-left__presenter:hover:not(.info-left__presenter:focus-within)::after,
+.info-left__more-info:hover:not(.info-left__more-info:focus-within)::after,
+
+.info-right__target:hover:not(.info-right__target:focus-within)::after,
+.info-right__experience:hover:not(.info-right__experience:focus-within)::after,
+.info-right__education:hover:not(.info-right__education:focus-within)::after,
+.info-right__prize:hover:not(.info-right__prize:focus-within)::after,
+.info-right__certificate:hover:not(.info-right__certificate:focus-within)::after,
+.info-right__activities:hover:not(.info-right__activities:focus-within)::after
+{
+    content: "";
+    border: 1px dotted;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    position: absolute;
+    z-index: 0;
+    border-radius: 6px;
+}
+
+/*
+=========================
+    Make border focus
+=========================
+*/
+
+/***** Person *****/
+.person__info-left:focus-within,
+.info-left__name:focus-within,
+.info-left__department:focus-within,
+/***** Person info *****/
+.info-left__person-info:focus-within,
+.person-info-item__text:focus-within,
+.person-info-item__link:focus-within,
+/***** Skills *****/
+.info-left__skills:focus-within,
+.skills__item:focus-within,
+/***** Favourite *****/
+.info-left__favourite:focus-within,
+.favourites__item:focus-within,
+/***** Presenter *****/
+.info-left__presenter:focus-within,
+.presenter__item:focus-within,
+.presenter__item-text:focus-within,
+/***** More info *****/
+.info-left__more-info:focus-within,
+.more-info__item:focus-within,
+/***** Career target *****/
+.info-right__target:focus-within,
+.target__content:focus-within,
+/***** Experience *****/
+.info-right__experience:focus-within,
+.experience__content:focus-within,
+.content-header__title:focus,
+.content-header-time:focus,
+.ex-content__company:focus,
+.ex-content__item:focus-within,
+.ex-content__company:focus-within,
+/***** Education *****/
+.info-right__education:focus-within,
+.education__item:focus-within,
+.education__item-majors:focus-within,
+.education__item-time:focus-within,
+.education__description:focus-within,
+.education__item-content:focus-within,
+/* .edu-content-body__description:focus-within, */
+/***** Prize *****/
+.info-right__prize:focus-within,
+.prize__item:focus,
+.prize__item-content:focus-within,
+.prize__content-year:focus-within,
+.prize__content-name:focus-within,
+/***** Certificate *****/
+.info-right__certificate:focus-within,
+.certificate__item:focus-within,
+.certificate__content-year:focus-within,
+.certificate__content-name:focus-within,
+/***** Activities *****/
+.info-right__activities:focus-within,
+.activities-header__name:focus-within,
+.activities-header__time:focus-within,
+.activities-content__name:focus-within,
+.activities-content__item:focus-within,
+.activities-content__desc:focus-within
+
+
+{
+    outline: none;
+    border: 1px dotted;
+    padding: 7px;
+    border-radius: 6px;
+    margin: 12px 0;
+    
+}
+
+/*
+===============================
+    Make show button insert
+===============================
+*/
+/***** Person info *****/
+.info-left__person-info:hover .btn__insert-line,
+.info-left__person-info:focus-within .btn__insert-line,
+/***** Skills *****/
+.info-left__skills:focus-within .btn__insert-line,
+.info-left__skills:hover .btn__insert-line,
+/***** Favourite *****/
+.info-left__favourite:hover .btn__insert-line,
+.info-left__favourite:focus-within .btn__insert-line,
+/***** Presenter *****/
+.info-left__presenter:hover .btn__insert-line,
+.info-left__presenter:focus-within .btn__insert-line,
+.presenter__item:focus-within .btn__insert-line-1,
+/***** More info *****/
+.info-left__more-info:focus-within .btn__insert-line,
+.info-left__more-info:hover .btn__insert-line,
+/***** Career target *****/
+.info-right__target:hover .btn__insert-line,
+.info-right__target:focus-within .btn__insert-line,
+.target__content:focus-within .btn__insert-line,
+/***** Experience *****/
+.info-right__experience:focus-within .btn__insert-line,
+.info-right__experience:hover .btn__insert-line,
+.experience__content:focus-within .btn__insert-line-1,
+/***** Education *****/
+.info-right__education:hover .btn__insert-line,
+.info-right__education:focus-within .btn__insert-line,
+.education__item:focus-within .btn__insert-line-1,
+/***** Prize *****/
+.info-right__prize:hover .btn__insert-line,
+.info-right__prize:focus-within .btn__insert-line,
+/***** Certificate *****/
+.info-right__certificate:focus-within .btn__insert-line,
+.info-right__certificate:hover .btn__insert-line,
+/***** Activities *****/
+.info-right__activities:hover .btn__insert-line,
+.info-right__activities:focus-within .btn__insert-line
+
+{
+    display: flex;
+   
+}
+
+/*
+==============================
+    Make show button delete
+==============================
+*/
+
+/***** Person *****/
+.person-info__item:focus .btn__DeleteElement,
+.person-info-item__text:focus .btn__DeleteElement,
+.person-info-item__link:focus .btn__DeleteElement,
+/***** Skills *****/
+.info-left__skills:focus-within .btn__Delete,
+.info-left__skills:hover .btn__Delete,
+.skills__item:focus-within .btn__DeleteElement,
+/***** Favourite *****/
+.info-left__favourite:hover .btn__Delete,
+.info-left__favourite:focus-within .btn__Delete,
+.favourites__item:focus-within .btn__DeleteElement,
+/***** Presenter *****/
+.info-left__presenter:hover .btn__Delete,
+.info-left__presenter:focus-within .btn__Delete,
+.presenter__item-text:focus-within .btn__DeleteElement,
+.presenter__item:focus-visible .btn__DeleteElement,
+.presenter__item:focus-within .btn__Delete-1,
+/***** More info *****/
+.info-left__more-info:hover .btn__Delete,
+.info-left__more-info:focus-within .btn__Delete,
+.more-info__item:focus-within .btn__DeleteElement,
+/***** Carrer target *****/
+.info-right__target:hover .btn__Delete,
+.info-right__target:focus-within .btn__Delete,
+.target__content:focus-within .btn__DeleteElement,
+/***** Experience *****/
+.info-right__experience:hover .btn__Delete,
+.info-right__experience:focus-within .btn__Delete,
+.ex-content__item:focus-within .btn__DeleteElement,
+.experience__content:focus-within .btn__Delete-1,
+.ex-content__company:focus .btn__DeleteElement,
+.ex-content__item:focus .btn__DeleteElement,
+/***** Education *****/
+.info-right__education:hover .btn__Delete,
+.info-right__education:focus-within .btn__Delete,
+.education__item:focus-within .btn__DeleteElement,
+.education__item-content:focus-within .btn__Delete-1,
+.education__description:focus-within .btn__Delete-2,
+/***** Prize *****/
+.info-right__prize:hover .btn__Delete,
+.info-right__prize:focus-within .btn__Delete,
+.prize__item:focus-within .btn__DeleteElement,
+.prize__content-year:focus-within .btn__Delete-1,
+/***** Certificate *****/
+.info-right__certificate:hover .btn__Delete,
+.info-right__certificate:focus-within .btn__Delete,
+.certificate__item:focus-within .btn__DeleteElement,
+.certificate__content-year:focus-within .btn__Delete-1,
+/***** Activities *****/
+.info-right__activities:hover .btn__Delete,
+.info-right__activities:focus-within .btn__Delete,
+.activities-content__item:focus-within .btn__DeleteElement,
+.activities-content__desc:focus-within .btn__Delete-1
+
+{
+    
+    display: flex;
+    cursor: pointer;
+    color: #333;
+}
+
+/*
+========================
+    Button Delete
+========================
+*/
+
+.btn__Delete,
+.btn__DeleteElement,
+.btn__Delete-1,
+.btn__Delete-2{
+    top: -10px;
+    left: calc(100% - 10px);
+    position: absolute;
+    align-self: flex-end;
+    display: none;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    outline: none;
+    border: 0px;
+    
+}
+
+.btn__Delete__icon{
+    color: rgb(53, 58, 61);
+    font-size: 10px;
+}
+
+.btn__Delete-1:hover,
+.btn__Delete-2:hover,
+.btn__Delete:hover,
+.btn__DeleteElement:hover
+{
+    
+    background-color: var(--primary-color);
+
+}
+
+/*
+==========================
+    Button insert
+==========================
+*/
+
+.btn__insert-line{
+    position: absolute;
+    display: none;
+    right: -42px;
+    bottom: 0;
+    background-color: gray;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    width: 40px;
+    height:40px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.btn__insert-line::after{
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: -3px;
+    width: 6px;
+    position: absolute;
+}
+
+.btn__insert-line-1{
+    display: none;
+    margin-left: 85%;
+}
+
+#education .btn__insert-line-1,
+#experience .btn__insert-line-1{
+    margin-left: 93%;
+}
+
+.btn__insert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid #fff ;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 9px;
+    color: #fff;
+
+}
+
+.btn__insert.btn__insert--right{
+    align-self: flex-end;
+    border: 1px solid #333;
+    color: #333;
+}
+
+.btn__insert:hover{
+    background-color: var(--primary-color);
+}
+
+/*
+==========================
+        Avatar
+==========================
+*/
+
+#img{
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+.avatar{
+    position: relative;
+}
+
+.avatar:hover .avatar__upload{
+    display: flex;
+}
+
+.avatar__upload{
+    position: absolute;
+    background-color: rgba(236, 143, 0, 0.6);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 0 0 6px 6px;
+    
+}
+
+.upload-icon{
+    font-size: 27px;
+}
+
+.lbl__upload-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lbl__upload-icon:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/*
+===========================
+        Person
+===========================
+*/
+
+.info-left__name{
+    font-size: 23px;
+}
+
+.info-left__department{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* 
+===========================
+    Person info
+===========================
+*/
+.person-info__item{
+    display: flex;
+    word-break: break-all;
+    margin-bottom: 6px;
+    position: relative;
+   
+}
+
+/* .edit_text{
+    top: 0;
+    height: 100%;
+    width: 40px;
+    right: -45px;
+    border-radius: 6px;
+    background-color: #8f9397;
+    position: absolute;
+} */
+
+/* .config-board{
+    top: 0;
+    height: 100%;
+    width: 40px;
+    right: -45px;
+    border-radius: 6px;
+    background-color: #8f9397;
+    position: absolute;
+} */
+
+.person__info-left{
+    margin: 27px 0;
+}
+
+.person-info__list{
+    margin: 18px 0 18px 6px;
+}
+
+.person-info-item__text{
+    line-height: 13px;
+    margin-left: 9px;
+}
+
+.person-info-item__link{
+    line-height: 13px;
+    margin-left: 9px;
+    text-decoration: none;
+    color: #606266;
+}
+
+.person-info-item__text{
+    box-sizing: border-box;
+}
+
+/*
+==================
+    Skills
+==================
+*/
+
+.person-info-item__link ,
+.person-info-item__text,
+.info-left__favourite,
+.favourites__item,
+.info-left__presenter,
+
+.presenter__item-text,
+.presenter__item,
+.info-left__presenter,
+
+.info-left__more-info,
+.more-info__item,
+
+.info-left__skills,
+
+.info-right__target,
+.target__content,
+
+.info-right__experience,
+.experience__content,
+.ex-content__company,
+.ex-content__item,
+
+.info-right__education,
+.edu-content__body,
+.edu-content-body__description,
+
+.info-right__prize,
+.prize__item,
+
+.info-right__certificate,
+.certificate__item
+
+{
+    position: relative;
+}
+
+.skills__item{
+    text-transform: uppercase;
+    margin-bottom: 9px;   
+    position: relative;
+}
+
+
+/*
+======================
+    Favourite
+======================
+*/
+
+.favourites__item{
+    margin-bottom: 6px;
+}
+
+/*
+=======================
+    Presenter
+=======================
+*/
+.presenter__item{
+    margin-bottom: 12px;
+}
+
+.presenter__item-text:nth-child(1):focus-within
+{
+   margin-top: 10px;
+   margin-right: 6px;
+}
+
+.presenter__item-text:nth-child(1){
+    font-weight: bold;
+}
+
+/*
+====================
+    Education
+====================
+*/
+.education__item{
+    position: relative;
+    margin-bottom: 6px;
+
+}
+
+.education__item-content,
+.education__item-majors,
+.education__item-time,
+.education__school-name,
+.education__description
+{
+    position: relative;
+    z-index: 2;
+}
+
+.education__school-name{
+    color: #000;
+    font-weight: 600;
+}
+
+.education__item-content{
+    margin-bottom: 3px;
+}
+
+
+.education__school-name:focus-within{
+    margin-top: 10px;
+    outline: none;
+    border: 1px dotted;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+/*
+======================
+    Career Target
+======================
+*/
+
+.target__content{
+    margin-bottom: 9px;
+}
+
+.not-hover{
+    pointer-events: none;
+}
+
+/*
+====================
+    Experience
+====================
+*/
+
+.cv .ex-content__list li{
+    list-style: outside;
+}
+
+.ex-content__list{
+    display: inline-block;
+    margin-left: 35px;
+    padding-right: 9px;
+}
+
+.content-header-time,
+.content-header__title{
+    position: relative;
+}
+
+.content-header-time::after,
+.content-header__title::after{
+    position: absolute;
+    content: "";
+    background-color: gray;
+    height: 1px;
+    width: 70%;
+    top: 140%;
+    left: 15%;  
+}
+
+.ex-content__header:focus-within .content-header-time::after,
+.ex-content__header:focus-within .content-header__title::after{
+    background-color: transparent;
+}
+/*
+========================
+        Prize
+========================
+*/
+.certificate__item-content,
+.prize__item-content{
+    position: relative;
+    display: flex;
+}
+
+.certificate__content-year,
+.prize__content-year{
+    position: relative;
+    font-weight: bold;
+    width: 10%;
+}
+
+.certificate__content-name,
+.prize__content-name{
+   width: 90%;
+}
+
+/*
+========================
+     Activities
+========================
+*/
+
+.activities-content__item{
+    margin-bottom: 9px;
+}
+
+.activities-content__name{
+    width: auto;
+}
+
+.activities-content__list,
+.activities-content__desc,
+.info-right__activities,
+.activities-content__desc,
+.activities-content__item
+{
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+

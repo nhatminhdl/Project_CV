@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js">
+    </script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> -->
+    <!-- <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js">
+    </script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script> -->
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+    
+    </style>
+    
+</head>
+<body>
+    <!-- Start cv__side-bar -->
+<div class="cv__side-bars">
+    <div class="cv__wrapper-side-bar">
+        <div class="cv__btn-setting">
+            <button class="btn">
+                <i class="fa-solid fa-gear cv__icon-setting"></i>
+                <span>Thiết lập</span>
+            </button>
+        </div>
+        <div class="cv__btn-export-pdf">
+            <button id="btn__export-pdf" class="btn">
+                <i class="fa-solid fa-file-arrow-down cv__icon-setting"></i>
+                <span>Tải xuống</span>
+            </button>
+            </i>
+        </div>
+        <div class="cv__btn-save-cv">
+            <button id="btn__export-pdf" class="btn">
+                <i class="fa-regular fa-floppy-disk cv__icon-setting"></i>
+                <span>Lưu CV</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- End cv__side-bar -->
+    <div class="cv">
+        <div class="container-fluid" >
+         <div class="container">
+            <div class="wrapper">
+                <div class=" wrapper-left ">
+                    <!-- Start Avatar -->
+                    <div class="avatar">
+                        <img id="img" src="avatar.png" alt="" class="img-thumbnail">
+                        
+                        <div class="avatar__upload">
+                            <label class="lbl__upload-icon" for="upload-image">
+                                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                                <span>Upload Image</span>
+                            </label>
+                            <input hidden id="upload-image" type="file">
+                        </div>
+                    </div>
+                    <!-- End Avatar -->
+                    <!-- Start Person -->
+                    <div id="person" class="person__info-left">
+                        <h2 class="info-left__name text_color--primary"><p placeholder="Nhập họ và tên">Nguyễn Văn A</p></h2>
+                        <h5 class="info-left__department text_color--primary"><p placeholder="Nhập vị trí ứng tuyển">Nhân viên kế toán</p></h5> 
+                    </div>
+                    <!-- End Person -->
+                    <!-- Start Persion info -->
+                    <div id="persion-info" class="info-left__person-info">
+                        <div class="title-cv" >
+                            <span class="title-cv__text font-12">Thông tin cá nhân</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="person-info__list">
+                            <li class="person-info__item">
+                                <i class="fa-solid fa-square-phone text_color--primary"></i>
+                                <div  class="person-info-item__text font-12">
+                                    <p placeholder="Nhập số điện thoại">(024) 6680 5588</p>
+                                    <div class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </div>
+                                </div>
+                               
+                            </li>
+                            <li class="person-info__item">
+                                <i class="fa-solid fa-envelope text_color--primary"></i>
+                                <div class="person-info-item__text font-12">
+                                    <p placeholder="Nhập địa chỉ email">manager@amnote.com.vn</p>
+                                    <div class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </div>
+                                </div>
+                               
+                            </li>
+                            <li class="person-info__item">
+                                <i class="fa-solid fa-circle-info text_color--primary"></i>
+                                <a class="person-info-item__link font-12" href="#">
+                                    <p placeholder="Nhập địa chỉ liên kết: FB, web,...">http://acva.vn</p>
+                                    <div class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </div>
+                                
+                                </a>
+                               
+                            </li>
+                            <li class="person-info__item">
+                                <i class="fa-solid fa-location-dot text_color--primary"></i>
+                                <div class="person-info-item__text">
+                                    <p placeholder="Nhập địa chỉ">Đà lạt, Lâm Đồng</p>
+                                    <div class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </div>
+                                </div>
+                                <div class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- End person info -->
+                    <!-- Start Skills -->
+                    <div id="skills" class="info-left__skills">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Các kỹ năng</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="skill__list">
+                            <li class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng"> Xử lí chứng từ </p>
+
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            
+                            
+                            <li  class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng">Hoạch toán thu chi</p>
+
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li  class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng">Quản lí công nợ</p>
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li  class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng"> Sử dụng excel thành thạo</p>
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+
+                            </li>
+                            <li class="skills__item">
+                                
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng">Sử dụng Misa thành thạo</p>
+
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng">Lập báo cáo giấy tờ</p>
+                            
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="skills__item">
+                               <p class="text__edit" placeholder="Nhập tên kỹ năng">Lập tờ khai thu</p> 
+                                
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="skills__item">
+                               <p class="text__edit" placeholder="Nhập tên kỹ năng"> In ấn sổ sách tài chính</p>
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="skills__item">
+                                <p class="text__edit" placeholder="Nhập tên kỹ năng" id="testfocus">Thực hiện bút toán tài chính</p>
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            
+                            </li>
+                        </ul>
+
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <button class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </button>
+                    </div>
+                    <!-- End Skill -->
+                    <!-- Start Favourite -->
+                    <div id="favourite" class="info-left__favourite">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Sở thích</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="favourite__list">
+                            <li class="favourites__item">
+                                <p placeholder="Nhập các sở thích của bạn" class="text__edit">Teambuilding, tham gia các câu lạc bộ, văn nghệ, chơi thể thao</p>
+
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <button class="btn__insert-line">
+                            <span title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Favourite -->
+                    <!-- Start Presenter -->
+                    <div id="presenter" class="info-left__presenter">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Người giới thiệu</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+                        
+                        <ul class="presenter__list">
+                            <li class="presenter__item">
+                                <div class="presenter__item-info">
+                                    <div class="presenter__item-text">
+                                        <p>Ông Nguyễn Văn A </p>
+                                        <button  class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="presenter__item-text">
+                                        <p> CEO công ty A </p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="presenter__item-text">
+                                        <p>Email: abc@gmail.com</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div  class="presenter__item-text">
+                                        <p >Điện thoại: 0123 456 789</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                                <button class="btn__Delete-1">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            
+                            <li class="presenter__item">
+                                <div class="presenter__item-info">
+                                    <div class="presenter__item-text"> 
+                                        <p>Bà Lê Thị B</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="presenter__item-text"> 
+                                        <p>Trưởng phòng nhân sự công ty B</p> 
+                                        <div class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </div>
+                                    </div>
+                                    <div  class="presenter__item-text"> 
+                                        <p>Email: xyz@gmail.com</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="presenter__item-text">
+                                       <p> Điện thoại: 0123 456 789 </p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                                <button class="btn__Delete-1">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Presenter -->
+                    <!-- Start More info -->
+                    <div id="more-info" class="info-left__more-info">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Thông tin thêm</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="more-info__list">
+                            <li class="more-info__item">
+                                <p placeholder="(Điền các thông tin khác nếu có)"></p>
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <button class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </button>
+                    </div>
+                    <!-- End More info -->
+                
+                </div>
+                
+                <div class="wrapper-right ">
+                    <!-- Start Career Goals -->
+                    <div id="career-target" class="info-right__target">
+                        <div class="title-cv" style="margin-left: 0;">
+                            <span class="title-cv__text">Mục tiêu nghề nghiệp</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+                        
+                        <div class="target__career">
+                            <div class="target__content">
+                                <p>
+                                Có 2 năm kinh nghiệm thực tập và toàn thời gian công việc kế toán tại công ty A. 
+                                Thành thạo trong việc xử lý chứng từ, thu chi, sử dụng các phần mềm Excel, Misa và làm việc với cơ quan thuế. 
+                                Mong muốn được làm việc tại vị trí A, công ty B để đóng góp hoàn thiện các công việc kế toán của công ty theo đúng quy định pháp luật.
+                                </p>
+                                
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Career Goals -->
+                    <!-- Start Experience -->
+                    <div id="experience" class="info-right__experience">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Kinh nghiệm làm việc</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <div class="experience__content-block">
+                            <div class="experience__content">
+                                <div class="ex-content__header">
+                                    <h6 class="content-header__title">Kế toán nội bộ</h6>
+                                    <h6 class="content-header-time">08/2020 - 08/2022</h6>
+                                </div>
+    
+                                <div class="ex-content__company">
+                                    <p placeholder="Nhập tên công ty">Công ty ABC</p>
+    
+                                    <button class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </button>
+                                
+                                </div>
+    
+                                <ul class="ex-content__list">
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc"> Kiểm soát các hoạt động kế toán, các loại chi phí, thu chi xuất nhập, công nợ… </p>
+    
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Lập báo cáo tài chính định kỳ</p>
+    
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Báo cáo tài chính từ đó nắm bắt biến động về chi phí kịp thời đưa ra những giải pháp để kiểm soát chi phí.</p>
+    
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                       <p placeholder="Nhập mô tả kinh nghiệm làm việc">
+                                            Kiểm soát và quản lý quy trình lập hồ sơ sổ sách,
+                                         hạch toán các bút toán thanh toán, các quy trình kiểm kê tài sản, 
+                                         bảng cân đối kế toán cũng như các tài liệu khác có liên quan của doanh nghiệp Quản lý,
+                                       </p>
+                                    
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Các công việc khác có liên quan theo sự phân công của Kế toán trưởng và lãnh đạo công ty</p>
+                                    
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+    
+                                
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert btn__insert--right">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+    
+                                <div class="btn__Delete-1">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </div>
+                              
+                            </div>
+    
+                            <div class="experience__content">
+                                <div class="ex-content__header">
+                                    <h6 class="content-header__title">THỰC TẬP SINH KẾ TOÁN</h6>
+                                    <h6 class="content-header-time">08/2020 - 08/2022</h6>
+                                </div>
+    
+                                <div class="ex-content__company"><p placeholder="Nhập tên công ty">Công ty BCD</p></div>
+    
+                                <ul class="ex-content__list">
+                                    <li class="ex-content__item">
+                                       <p placeholder="Nhập mô tả kinh nghiệm làm việc"> Nhập liệu và hạch toán chứng từ lên phần mềm kế toán Misa. </p>
+                                       <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Sắp xếp và lưu trữ chứng từ.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                       <p placeholder="Nhập mô tả kinh nghiệm làm việc"> Quản lý các khoản thu và phải chi.</p>
+                                       <button class="btn__DeleteElement">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Theo dõi và báo cáo quản lý các khoản thu – chi.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Lập các báo cáo, in chứng từ, sổ sách có liên quan trình cấp trên định kỳ hoặc đột xuất theo yêu cầu.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Báo cáo tình hình công nợ với khách hàng, nhà cung cấp cho ban lãnh đạo.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Đối chiếu công nợ với khách hàng, nhà cung cấp.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                    <li class="ex-content__item">
+                                        <p placeholder="Nhập mô tả kinh nghiệm làm việc">Giải trình số liệu khi có yêu cầu.</p>
+                                        <button class="btn__DeleteElement">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+    
+                                
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert btn__insert--right">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                             
+    
+                                <div class="btn__Delete-1">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert ">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+
+                    </div>
+                    <!-- End Experience -->
+                    <!-- Start Education -->
+                    <div id="education" class="info-right__education">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Học vấn</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="education__list">
+                            <li class="education__item">
+                                <div class="education__item-header">
+                                    <div class="education__item-majors"><p placeholder="Nhập ngành học/môn học">Chuyên ngành kế toán</p></div>
+                                    <div class="education__item-time"><p placeholder="Bắt đầu - Kết thúc">2016 - 2020</p></div>
+                                </div>
+
+                                <div class="education__item-content">
+                                    <div class="education__school-name">
+                                        <p placeholder="Nhập tên trường học">Đại học AMNOTE</p>
+                                        <button class="btn__Delete-2">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="education__description">
+                                        <p placeholder="Nhập mô tả quá trình học tập hoặc thành tích">Tốt nghiệp loại giỏi</p>
+                                        <button class="btn__Delete-2">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+
+                                    <button class="btn__Delete-1">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </button>
+                                </div>
+
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert btn__insert--right">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+
+                            </li>
+
+                            <li class="education__item">
+                                <div class="education__item-header">
+                                    <div class="education__item-majors"><p placeholder="Nhập ngành học/môn học">Chứng chỉ AMNOTE</p></div>
+                                    <div class="education__item-time"><p placeholder="Bắt đầu - Kết thúc">2016 - 2020</p></div>
+                                </div>
+                                
+                                <div class="education__item-content"></div>
+                                
+                                <div class="btn__insert-line-1">
+                                    <button title="Thêm dòng" class="btn__insert btn__insert--right">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Education -->
+                    <!-- Start Prize -->
+                    <div id="prize" class="info-right__prize">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Danh hiệu và giải thưởng</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="prize__list">
+                            <li class="prize__item">
+                                <div class="prize__item-content">
+                                    <div class="prize__content-year">
+                                        <p placeholder="Năm">2020</p>
+                                        <button class="btn__Delete-1">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="prize__content-name">
+                                        <p placeholder="Tên giải thưởng">Nhân viên xuất sắc Quý 3/2020</p>
+                                    </div>
+                                </div>
+                               
+                               <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="prize__item">
+                                <div class="prize__item-content">
+                                    <div class="prize__content-year">
+                                        <p placeholder="Năm">2020</p>
+                                        <button class="btn__Delete-1">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="prize__content-name"><p placeholder="Tên giải thưởng">Giải nhất cuộc thi văn nghệ X</p></div>
+                                </div>
+                                
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Prize -->
+                    <!-- Start Certificate -->
+                    <div id="certificate" class="info-right__certificate">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Chứng chỉ</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+
+                        <ul class="certificate__list">
+                            <li class="certificate__item">
+                                <div class="certificate__item-content">
+                                    <div class="certificate__content-year">
+                                        <p placeholder="Năm">2020</p>
+                                        <button class="btn__Delete-1">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="certificate__content-name">
+                                        <p placeholder="Tên chứng chỉ">Chứng chỉ ACCA (Chartered Certified Accountants)</p>
+                                    </div>
+                                </div>
+                               
+                               <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                            <li class="certificate__item">
+                                <div class="certificate__item-content">
+                                    <div class="certificate__content-year">
+                                        <p placeholder="Năm">2020</p>
+                                        <button class="btn__Delete-1">
+                                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                        </button>
+                                    </div>
+                                    <div class="certificate__content-name">
+                                        <p placeholder="Tên chứng chỉ">Chứng chỉ CIA (Certified Internal Auditor)</p>
+                                    </div>
+                                </div>
+                               
+                               <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Certificate -->
+                    <!-- Start Activities -->
+                    <div id="activities" class="info-right__activities">
+                        <div class="title-cv" >
+                            <span class="title-cv__text">Hoạt động</span>
+                            <div class="title-cv__line"></div>
+                        </div>
+                            
+                        <ul class="activities-content__list">
+                            <li class="activities-content__item">
+                                <div class="activities__header">
+                                    <div class="activities-header__name"><p placeholder="Vị trí của bạn">Thành viên</p></div>
+                                    <div class="activities-header__time"><p placeholder="Bắt đầu - Kết thúc">06/2016 - 09/2020</p></div>
+                                </div>
+                                <div class="activities-content__name">
+                                    <p placeholder="Nhập tên tổ chức">Câu lạc bộ sự kiện, trường Đại học AMNOTE</p>
+                                </div>
+                                
+                                <div class="activities-content__desc">
+                                    <p placeholder="Nhập mô tả hoạt động"> Đã tham gia tổ chức quyên góp cho khu vực lân cận địa phương, gây quỹ hơn 10 triệu để ủng hộ 30 người nghèo.</p>
+                                    <button class="btn__Delete-1">
+                                        <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                    </button>
+                                </div>
+                                
+                                <button class="btn__DeleteElement">
+                                    <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="btn__insert-line">
+                            <button title="Thêm dòng" class="btn__insert">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="btn__Delete">
+                            <i class="fa-solid fa-xmark btn__Delete__icon"></i>
+                        </div>
+                    </div>
+                    <!-- End Activities -->
+                </div>
+                
+            
+            </div>
+           
+        </div>
+        </div>  
+        
+
+    </div>
+   
+
+    <button id="btn" style="position: absolute; top: 0;" class="test">test</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="pdf.js"></script>
+    <script src="./templateCV.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js">
+    </script>
+</head>
+  
+<body>
+    <div class="GFG">
+        <h1 style="color: tomato;">
+            GeeksForGeeks
+        </h1>
+        <h2>Founded by Sandeep Jain</h2>
+        <p>A Computer Science portal for geeks.</p>
+        <p>
+            It contains well written, well thought 
+            and well explained computer science 
+            and programming articles.
+        </p>
+    </div>
+  
+    <button id="btn"> PDF MAKER </button>
+      
+    <script>
+        var button = document.getElementById("btn");
+        button.addEventListener("click", function () {
+            var doc = new jsPDF();
+            var pdf = document.querySelector(".GFG");
+            doc.fromHTML(pdf);
+            doc.save("GFG.pdf");
+        });
+    </script>
+</body>
+  
+</html>
